@@ -55,18 +55,16 @@ if(isset($_POST["signup"])) {
 
 <!--Sidenav-->
 <div id="mySidenav" class="sidenav">
-    <a class="sidenav-brand" style="font-size: 46px;" href="http://localhost/WebDesign/Bookstore/index.php">
+    <a class="sidenav-brand" style="font-size: 46px;" href="index.php">
         End&nbsp;of&nbsp;Story
         <img src="images/book2.png" alt="logo" width="130px" height="120px" style="margin-top: 30px;">
     </a>
     <br><br>
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&nbsp;&nbsp;&nbsp;&nbsp;&#8652;</a>
     <a class="active" href="#top">Home</a>
-    <a href="#Mem">Memories</a>
-    <a href="#quoteC">Quotes</a>
-    <a href="#timeline">Thoughts</a>
-    <a href="#">Lines</a>
-    <a href="#">Drawings</a>
+    <a href="#description">Description</a>
+    <a href="#books">Books</a>
+    <a href="#article">Discover</a>
 </div>
 
 <div id="main">
@@ -106,10 +104,10 @@ if(isset($_POST["signup"])) {
                       <a class="nav-link active" href="#">Sign Up</a>
                   </li>
                   <li class="nav-item dropdown">
-                      <a class="nav-link" href="http://localhost/WebDesign/Bookstore/login.php">Login</a>
+                      <a class="nav-link" href="login.php">Login</a>
                   </li>
               </ul>
-              <a class="navbar-brand" href="http://localhost/WebDesign/Bookstore/index.php">
+              <a class="navbar-brand" href="index.php">
                   BookStore
               </a>
 

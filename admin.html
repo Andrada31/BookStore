@@ -4,7 +4,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MyBooks</title>
+    <title>Admin</title>
     <link rel="icon" type="image/x-icon" href="images/book2.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style_book.css">
+    <link rel="stylesheet" href="style_admin.css">
     <script src="script.js"></script>
 </head>
 
@@ -86,18 +87,36 @@
         <!--book description-->
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-6" id="article-text">
-                    <h2 class="article-title" style="color:white;"><a>My Books</a></h2>
-                </div>
-                <div class="col-lg-6">
-                    <!-- <div class="highlight">
-                        <h4>Highlight</h4>
-                        <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large
-                            language ocean. A small river named Duden flows by their place and supplies it with
-                            the necessary regelialia</p>
-                    </div> -->
+                <div class="col-lg-4" id="admin-text">
+                    <h2 class="admin-title" style="color:white;"><a>Admin panel</a></h2>
                 </div>
             </div>
+
+            <div class="container-fluid col-lg-4" id="container-form">
+                <form id="form" method="POST">
+                    <div>
+                        <h1>Create an account</h1>
+                    </div>
+                    <div class="formInput">
+                        <label>E-mail</label>
+                        <input placeholder="E-mail" type="email" name="email" required>
+                    </div>
+                    <div class="formInput">
+                        <label>Password</label>
+                        <input placeholder="Password" type="password" name="password" required>
+                    </div>
+                    <div class="formInput">
+                        <label>Repeat password</label>
+                        <input placeholder="Repeat password" type="password" name="rpassword" required>
+                    </div>
+                    <input id="submit" type="submit" name="signup" value="Create my account">
+                    <div class="changePage">
+                        <p>Already have an account?</p>
+                        <a href="./login.php">Sign in</a>
+                    </div>
+                </form>
+            </div>
+
             <div class="row">
                 <div class="col-md-12">
                     <blockquote class="quote">

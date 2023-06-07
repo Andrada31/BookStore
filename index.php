@@ -98,17 +98,17 @@
                     </form>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="myBooks.html">Masfdsfasdfsdaf</a>
+                            <a class="nav-link" href="myBooks.html">My Books</a>
                         </li>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="http://localhost/WebDesign/Bookstore/register.php">Sign Up</a>
+                            <a class="nav-link" href="register.php">Sign Up</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="http://localhost/WebDesign/Bookstore/login.php" role="button">Login</a>
+                            <a class="nav-link" href="login.php" role="button">Login</a>
                         </li>
                     </ul>
-                    <a class="navbar-brand" href="http://localhost/WebDesign/Bookstore/index.php">
+                    <a class="navbar-brand" href="index.php">
                         BookStore
                     </a>
 
@@ -119,7 +119,7 @@
 
         <!--Sidenav-->
         <div id="mySidenav" class="sidenav">
-            <a class="sidenav-brand" style="font-size: 46px;" href="http://localhost/WebDesign/Bookstore/index.php">
+            <a class="sidenav-brand" style="font-size: 46px;" href="index.php">
                 End&nbsp;of&nbsp;Story
                 <img src="images/book2.png" alt="logo" width="130px" height="120px" style="margin-top: 30px;">
             </a>
@@ -127,8 +127,8 @@
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&nbsp;&nbsp;&nbsp;&nbsp;&#8652;</a>
             <a class="active" href="#top">Home</a>
             <a href="#description">Description</a>
-            <a href="#books">Discover</a>
-            <a href="#article">Thoughts</a>
+            <a href="#productContainer">Books</a>
+            <a href="#article">Discover</a>
         </div>
 
 
@@ -171,35 +171,33 @@
         <div class="product-container" id="productContainer">
             <div class="row">
             <?php
-include "server.php";
-// Query to fetch data from the database
-$query = "SELECT title, author, image FROM books";
+            include "server.php";
+            // Query to fetch data from the database
+            $query = "SELECT title, author, image FROM books";
 
-// Execute the query
-$result = $conn->query($query);
+            // Execute the query
+            $result = $conn->query($query);
 
-// Check if any rows are returned
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $title = $row['title'];
-        $author = $row['author'];
-        $image = $row['image'];
+            // Check if any rows are returned
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $title = $row['title'];
+                    $author = $row['author'];
+                    $image = $row['image'];
 
-        // Render the data in HTML
-        echo '<div class="product-card">';
-        echo '<div class="product-image">';
-        echo '<img src="' . $image . '" class="product-thumb" alt="' . $title . '">';
-        echo '<button class="card-btn">Add to My Books</button>';
-        echo '</div>';
-        echo '<div class="product-info">';
-        echo '<h2 class="product-title">' . $title . '</h2>';
-        echo '<p class="product-author">' . $author . '</p>';
-        echo '</div>';
-        echo '</div>';
-    }
-}
-
-?>
+                    // Render the data in HTML
+                    echo '<div class="product-card">';
+                    echo '<div class="product-image">';
+                    echo '<img src="' . $image . '" class="product-thumb" alt="' . $title . '">';
+                    echo '<button class="card-btn">Add to My Books</button>';
+                    echo '</div>';
+                    echo '<div class="product-info">';
+                    echo '<h2 class="product-title">' . $title . '</h2>';
+                    echo '<p class="product-author">' . $author . '</p>';
+                    echo '</div>';
+                    echo '</div>';
+                }
+            }?>
                 <div class="product-card">
                     <div class="product-image">
                         <!-- <span class="discount-tag">50% off</span> -->
