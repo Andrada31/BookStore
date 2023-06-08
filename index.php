@@ -39,7 +39,7 @@
                     <div class="hero-text">
                         <h1>"I have hated the words and I have loved them and I hope, I have made them right."</h1>
                         <p>Markus Zusak</p>
-                        <button class="hero-button">Add to My Books</button>
+                        <button class="hero-button">read more</button>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -49,7 +49,7 @@
                             can satisfy, the only logical
                             explanation is that I was made for another world."</h1>
                         <p>C.S. Lewis</p>
-                        <button class="hero-button">Add to My Books</button>
+                        <button class="hero-button">read more</button>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -59,7 +59,7 @@
                             not
                             happened?"</h1>
                         <p>Susanna Clarke</p>
-                        <button class="hero-button">Add to My Books</button>
+                        <button class="hero-button">read more</button>
                     </div>
                 </div>
             </div>
@@ -97,7 +97,7 @@
                     </form>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="myBooks.html">My Books</a>
+                            <a class="nav-link" href="myBooks.php">My Books</a>
                         </li>
                         </li>
                         <li class="nav-item">

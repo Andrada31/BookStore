@@ -1,21 +1,21 @@
 <?php
 require_once "server.php";
 
-if(isset($_POST["login"])) {
-  unset($error);
-  $error = "";
-  $email = $conn->real_escape_string(stripslashes(strip_tags($_POST["email"])));
-  $password = $conn->real_escape_string(stripslashes(strip_tags($_POST["password"])));
-  // $hashedPass = password_hash($password, PASSWORD_DEFAULT);
-  $sql = "SELECT * FROM users WHERE email='$email'";
-  $result = $conn->query($sql);
-  $row = $result->fetch_assoc();
-  if($result->num_rows == 0)
-    $error = "There is no account created with this email, try signing up.";
-  else if($result->num_rows == 1 && password_verify($password, $row['pass']))
-    header('Location: myBooks.html');
-  if($error != "")
-    echo $error;
+if (isset($_POST["login"])) {
+    unset($error);
+    $error = "";
+    $email = $conn->real_escape_string(stripslashes(strip_tags($_POST["email"])));
+    $password = $conn->real_escape_string(stripslashes(strip_tags($_POST["password"])));
+    // $hashedPass = password_hash($password, PASSWORD_DEFAULT);
+    $sql = "SELECT * FROM users WHERE email='$email'";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    if ($result->num_rows == 0)
+        $error = "There is no account created with this email, try signing up.";
+    else if ($result->num_rows == 1 && password_verify($password, $row['pass']))
+        header('Location: myBooks.php');
+    if ($error != "")
+        echo $error;
 }
 ?>
 
@@ -58,8 +58,7 @@ if(isset($_POST["login"])) {
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
             <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -83,7 +82,7 @@ if(isset($_POST["login"])) {
                     </form>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="myBooks.html">My Books</a>
+                            <a class="nav-link" href="myBooks.php">My Books</a>
                         </li>
                         </li>
                         <li class="nav-item">

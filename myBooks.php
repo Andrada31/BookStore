@@ -38,8 +38,7 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
             <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -89,12 +88,7 @@
                     <h2 class="article-title" style="color:white;"><a>My Books</a></h2>
                 </div>
                 <div class="col-lg-6">
-                    <!-- <div class="highlight">
-                        <h4>Highlight</h4>
-                        <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large
-                            language ocean. A small river named Duden flows by their place and supplies it with
-                            the necessary regelialia</p>
-                    </div> -->
+                    <h1 style="font-family:'Oooh Baby';font-size: 70px; margin-top:90px;">To be continued...</h1>
                 </div>
             </div>
             <div class="row">
