@@ -21,7 +21,7 @@
 
     <!--Sidenav-->
     <div id="mySidenav" class="sidenav">
-        <a class="sidenav-brand" style="font-size: 46px;" href="http://localhost/WebDesign/Bookstore/index.php">
+        <a class="sidenav-brand" style="font-size: 46px;" href="localhost/Bookstore/index.php">
             End&nbsp;of&nbsp;Story
             <img src="images/book2.png" alt="logo" width="130px" height="120px" style="margin-top: 30px;">
         </a>
@@ -67,14 +67,13 @@
                         </li>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="http://localhost/WebDesign/Bookstore/register.php">Sign Up</a>
+                            <a class="nav-link" href="register.php">Sign Up</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="http://localhost/WebDesign/Bookstore/login.php"
-                                role="button">Login</a>
+                            <a class="nav-link" href="login.php" role="button">Login</a>
                         </li>
                     </ul>
-                    <a class="navbar-brand" href="http://localhost/WebDesign/Bookstore/index.php">
+                    <a class="navbar-brand" href="index.php">
                         BookStore
                     </a>
 

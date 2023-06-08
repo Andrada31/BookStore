@@ -73,8 +73,7 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
             <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -170,347 +169,152 @@
         <!-- Book gallery-->
         <div class="product-container" id="productContainer">
             <div class="row">
-            <?php
-            include "server.php";
-            // Query to fetch data from the database
-            $query = "SELECT title, author, image FROM books";
+                <?php
+                include "server.php";
+                // Query to fetch data from the database
+                $query = "SELECT bookID, title, author, image FROM books";
 
-            // Execute the query
-            $result = $conn->query($query);
+                // Execute the query
+                $result = $conn->query($query);
 
-            // Check if any rows are returned
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    $title = $row['title'];
-                    $author = $row['author'];
-                    $image = $row['image'];
+                // Check if any rows are returned
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $title = $row['title'];
+                        $author = $row['author'];
+                        $image = $row['image'];
+                        $bookId = $row['bookID'];
 
-                    // Render the data in HTML
-                    echo '<div class="product-card">';
-                    echo '<div class="product-image">';
-                    echo '<img src="' . $image . '" class="product-thumb" alt="' . $title . '">';
-                    echo '<button class="card-btn">Add to My Books</button>';
-                    echo '</div>';
-                    echo '<div class="product-info">';
-                    echo '<h2 class="product-title">' . $title . '</h2>';
-                    echo '<p class="product-author">' . $author . '</p>';
-                    echo '</div>';
-                    echo '</div>';
-                }
-            }?>
-                <div class="product-card">
-                    <div class="product-image">
-                        <!-- <span class="discount-tag">50% off</span> -->
-                        <a href="book.html">
-                            <img src="images/pic_1.jpg" class="product-thumb" alt="">
-                            <button class="card-btn">Add to My Books</button>
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <h2 class="product-title">DUNE</h2>
-                        <p class="product-author">Frank Herbert</p>
-                        <!-- <span class="price">$20</span><span class="actual-price">$40</span> -->
-                    </div>
-                </div>
+                        // Render the data in HTML
+                        echo "<a href='book.php?bookId=$bookId' class=\"product-card\">";
+                        echo '<div class="product-image">';
+                        echo '<img src="images/' . $image . '" class="product-thumb" alt="' . $title . '">';
+                        echo '<button class="card-btn">Add to My Books</button>';
+                        echo '</div>';
+                        echo '<div class="product-info">';
+                        echo '<h2 class="product-title">' . $title . '</h2>';
+                        echo '<p class="product-author">' . $author . '</p>';
+                        echo '</div>';
+                        echo '</a>';
+                    }
+                } ?>
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <!-- <span class="discount-tag">50% off</span> -->
-                        <a href="book.html">
-                            <img src="images/pic_2.jpeg" class="product-thumb" alt="">
-                            <button class="card-btn">Add to My Books</button>
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <h2 class="product-title">The Secret History</h2>
-                        <p class="product-author">Donna Tartt</p>
-                        <!-- <span class="price">$20</span><span class="actual-price">$40</span> -->
-                    </div>
-                </div>
+                <!-- Book gallery ending -->
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <!-- <span class="discount-tag">50% off</span> -->
-                        <img src="images/pic_3.jpeg" class="product-thumb" alt="">
-                        <button class="card-btn">Add to My Books</button>
-                    </div>
-                    <div class="product-info">
-                        <h2 class="product-title">Where The Crawdads Sing</h2>
-                        <p class="product-author">Delia Owens</p>
-                        <!-- <span class="price">$20</span><span class="actual-price">$40</span> -->
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">
-                        <!-- <span class="discount-tag">50% off</span> -->
-                        <img src="images/pic_4.jpg" class="product-thumb" alt="">
-                        <button class="card-btn">Add to My Books</button>
-                    </div>
-                    <div class="product-info">
-                        <h2 class="product-title">Jane Eyre</h2>
-                        <p class="product-author">Charlotte Bronte</p>
-                        <!-- <span class="price">$20</span><span class="actual-price">$40</span> -->
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">
-                        <!-- <span class="discount-tag">50% off</span> -->
-                        <img src="images/pic_5.jpg" class="product-thumb" alt="">
-                        <button class="card-btn">Add to My Books</button>
-                    </div>
-                    <div class="product-info">
-                        <h2 class="product-title">The Old Man and The Sea</h2>
-                        <p class="product-author">Ernest Hemingway</p>
-                        <!-- <span class="price">$20</span><span class="actual-price">$40</span> -->
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="discount-tag">50% off</span>
-                        <img src="images/pic_6.jpg" class="product-thumb" alt="">
-                        <button class="card-btn">Add to My Books</button>
-                    </div>
-                    <div class="product-info">
-                        <h2 class="product-title">The Book Thief</h2>
-                        <p class="product-author">Markus Zusak</p>
-                        <!-- <span class="price">$20</span><span class="actual-price">$40</span> -->
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">
-                        <!-- <span class="discount-tag">50% off</span> -->
-                        <img src="images/pic_7.jpg" class="product-thumb" alt="">
-                        <button class="card-btn">Add to My Books</button>
-                    </div>
-                    <div class="product-info">
-                        <h2 class="product-title">The Diary of a Young Girl</h2>
-                        <p class="product-author">Anne Frank</p>
-                        <!-- <span class="price">$20</span><span class="actual-price">$40</span> -->
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">
-                        <!-- <span class="discount-tag">50% off</span> -->
-                        <img src="images/pic_8.jpg" class="product-thumb" alt="">
-                        <button class="card-btn">Add to My Books</button>
-                    </div>
-                    <div class="product-info">
-                        <h2 class="product-title">Lord of the Flies</h2>
-                        <p class="product-author">William Golding</p>
-                        <!-- <span class="price">$20</span><span class="actual-price">$40</span> -->
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">
-                        <!-- <span class="discount-tag">50% off</span> -->
-                        <img src="images/pic_9.jpg" class="product-thumb" alt="">
-                        <button class="card-btn">Add to My Books</button>
-                    </div>
-                    <div class="product-info">
-                        <h2 class="product-title">The Invisible Man</h2>
-                        <p class="product-author">H.G. Wells</p>
-                        <!-- <span class="price">$20</span><span class="actual-price">$40</span> -->
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <!-- <span class="discount-tag">50% off</span> -->
-                        <img src="images/pic_10.jpg" class="product-thumb" alt="">
-                        <button class="card-btn">Add to My Books</button>
-                    </div>
-                    <div class="product-info">
-                        <h2 class="product-title">Memoirs of a Geisha</h2>
-                        <p class="product-author">Arthur Golden</p>
-                        <!-- <span class="price">$20</span><span class="actual-price">$40</span> -->
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <!-- <span class="discount-tag">50% off</span> -->
-                        <img src="images/pic_11.jpg" class="product-thumb" alt="">
-                        <button class="card-btn">Add to My Books</button>
-                    </div>
-                    <div class="product-info">
-                        <h2 class="product-title">The Kite Runner</h2>
-                        <p class="product-author">Khaled Hosseini</p>
-                        <!-- <span class="price">$20</span><span class="actual-price">$40</span> -->
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="discount-tag">50% off</span>
-                        <img src="images/pic_12.jpg" class="product-thumb" alt="">
-                        <button class="card-btn">Add to My Books</button>
-                    </div>
-                    <div class="product-info">
-                        <h2 class="product-title">The Picture of Dorian Gray</h2>
-                        <p class="product-author">Oscar Wilde</p>
-                        <!-- <span class="price">$20</span><span class="actual-price">$40</span> -->
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <!-- <span class="discount-tag">50% off</span> -->
-                        <img src="images/pic_13.jpeg" class="product-thumb" alt="">
-                        <button class="card-btn">Add to My Books</button>
-                    </div>
-                    <div class="product-info">
-                        <h2 class="product-title">Piranesi</h2>
-                        <p class="product-author">Susanna Clarke</p>
-                        <!-- <span class="price">$20</span><span class="actual-price">$40</span> -->
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <!-- <span class="discount-tag">50% off</span> -->
-                        <img src="images/pic_14.jpg" class="product-thumb" alt="">
-                        <button class="card-btn">Add to My Books</button>
-                    </div>
-                    <div class="product-info">
-                        <h2 class="product-title">The Iliad</h2>
-                        <p class="product-author">Homer</p>
-                        <!-- <span class="price">$20</span><span class="actual-price">$40</span> -->
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <!-- <span class="discount-tag">50% off</span> -->
-                        <img src="images/pic_15.jpg" class="product-thumb" alt="">
-                        <button class="card-btn">Add to My Books</button>
-                    </div>
-                    <div class="product-info">
-                        <h2 class="product-title">The Night Circus</h2>
-                        <p class="product-author">Erin Morgenstern</p>
-                        <!-- <span class="price">$20</span><span class="actual-price">$40</span> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Book gallery ending -->
-
-        <!--End article-->
-        <div class="container-fluid">
-            <div class="row">
-                <article col-lg-8 id="article">
-
+                <!--End article-->
+                <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-8" id="article-text">
-                            <h2 class="article-title"><a>From worlds not so far away</a></h2>
-                            <p>There was no possibility of taking a walk that day. We
-                                had been wandering, indeed, in the leafless shrubbery
-                                an hour in the morning; but since dinner (Mrs. Reed, when
-                                there was no company, dined early) the cold winter wind
-                                had brought with it clouds so sombre, and a rain so penetrating, that further out-door
-                                exercise was now out of the
-                                question.</p>
+                        <article col-lg-8 id="article">
 
-                            <p>I was glad of it: I never liked long walks, especially on
-                                chilly afternoons: dreadful to me was the coming home in
-                                the raw twilight, with nipped fingers and toes, and a heart
-                                saddened by the chidings of Bessie, the nurse, and humbled by the consciousness of my
-                                physical inferiority to Eliza,
-                                John, and Georgiana Reed.</p>
+                            <div class="row">
+                                <div class="col-lg-8" id="article-text">
+                                    <h2 class="article-title"><a>Discover a chapter</a></h2>
+                                    <p>There was no possibility of taking a walk that day. We
+                                        had been wandering, indeed, in the leafless shrubbery
+                                        an hour in the morning; but since dinner (Mrs. Reed, when
+                                        there was no company, dined early) the cold winter wind
+                                        had brought with it clouds so sombre, and a rain so penetrating, that further out-door
+                                        exercise was now out of the
+                                        question.</p>
 
-                            <p>The said Eliza, John, and Georgiana were now clustered
-                                round their mama in the drawing-room: she lay reclined
-                                on a sofa by the fireside, and with her darlings about her
-                                (for the time neither quarrelling nor crying) looked perfectly happy. Me, she had
-                                dispensed from joining the
-                                group; saying, ‘She regretted to be under the necessity of
-                                keeping me at a distance; but that until she heard from Bessie, and could discover by
-                                her own observation, that I was
-                                endeavouring in good earnest to acquire a more sociable
-                                and childlike disposition, a more attractive and sprightly
-                                manner— something lighter, franker, more natural, as it were—she really must exclude me
-                                from privileges intended
-                                only for contented, happy, little children.’</p>
-                            <p>‘What does Bessie say I have done?’ I asked.</p>
+                                    <p>I was glad of it: I never liked long walks, especially on
+                                        chilly afternoons: dreadful to me was the coming home in
+                                        the raw twilight, with nipped fingers and toes, and a heart
+                                        saddened by the chidings of Bessie, the nurse, and humbled by the consciousness of my
+                                        physical inferiority to Eliza,
+                                        John, and Georgiana Reed.</p>
 
-                            <p>‘Jane, I don’t like cavillers or questioners; besides, there is
-                                something truly forbidding in a child taking up her elders
-                                in that manner. Be seated somewhere; and until you can
-                                speak pleasantly, remain silent.’/p>
+                                    <p>The said Eliza, John, and Georgiana were now clustered
+                                        round their mama in the drawing-room: she lay reclined
+                                        on a sofa by the fireside, and with her darlings about her
+                                        (for the time neither quarrelling nor crying) looked perfectly happy. Me, she had
+                                        dispensed from joining the
+                                        group; saying, ‘She regretted to be under the necessity of
+                                        keeping me at a distance; but that until she heard from Bessie, and could discover by
+                                        her own observation, that I was
+                                        endeavouring in good earnest to acquire a more sociable
+                                        and childlike disposition, a more attractive and sprightly
+                                        manner— something lighter, franker, more natural, as it were—she really must exclude me
+                                        from privileges intended
+                                        only for contented, happy, little children.’</p>
+                                    <p>‘What does Bessie say I have done?’ I asked.</p>
 
-                            <p>A breakfast-room adjoined the drawing-room, I slipped
-                                in there. It contained a bookcase: I soon possessed myself
-                                of a volume, taking care that it should be one stored with
-                                pictures. I mounted into the window-seat: gathering up my
-                                feet, I sat cross-legged, like a Turk; and, having drawn the
-                                red moreen curtain nearly close, I was shrined in double
-                                retirement.</p>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="highlight">
-                                <h4>Chapter of the Day</h4>
-                                <p>The concept of introducing a new book chapter sample for each day offers a delightful
-                                    way to engage with literature.
-                                    It involves presenting readers with a taste of a new chapter every day, enticing
-                                    them to continue their reading journey.
-                                    Each day brings a fresh glimpse into the unfolding story, creating a sense of
-                                    anticipation and curiosity. By introducing these chapter samples, readers can savor
-                                    the progression of the narrative and discover the book's characters, plot twists,
-                                    and themes gradually. It's an immersive experience that invites readers to savor the
-                                    pleasure of storytelling, one chapter at a time.</p>
+                                    <p>‘Jane, I don’t like cavillers or questioners; besides, there is
+                                        something truly forbidding in a child taking up her elders
+                                        in that manner. Be seated somewhere; and until you can
+                                        speak pleasantly, remain silent.’/p>
+
+                                    <p>A breakfast-room adjoined the drawing-room, I slipped
+                                        in there. It contained a bookcase: I soon possessed myself
+                                        of a volume, taking care that it should be one stored with
+                                        pictures. I mounted into the window-seat: gathering up my
+                                        feet, I sat cross-legged, like a Turk; and, having drawn the
+                                        red moreen curtain nearly close, I was shrined in double
+                                        retirement.</p>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="highlight">
+                                        <h4>Chapter of the Day</h4>
+                                        <p>The concept of introducing a new book chapter sample for each day offers a delightful
+                                            way to engage with literature.
+                                            It involves presenting readers with a taste of a new chapter every day, enticing
+                                            them to continue their reading journey.
+                                            Each day brings a fresh glimpse into the unfolding story, creating a sense of
+                                            anticipation and curiosity. By introducing these chapter samples, readers can savor
+                                            the progression of the narrative and discover the book's characters, plot twists,
+                                            and themes gradually. It's an immersive experience that invites readers to savor the
+                                            pleasure of storytelling, one chapter at a time.</p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+
+                            <div class="row rp-b">
+                                <div class="col-md-12 animate-box">
+                                    <blockquote class="quote">
+                                        <p>&ldquo;I can live alone, if self-respect, and circumstances require me so to do. I
+                                            need not sell my soul to buy bliss. I have an inward treasure born with me, which
+                                            can keep me alive if all extraneous delights should be withheld, or offered only at
+                                            a price I cannot afford to give.&rdquo; <cite>&mdash; Charlotte Brontë
+                                            </cite></p>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </article>
                     </div>
-
-                    <div class="row rp-b">
-                        <div class="col-md-12 animate-box">
-                            <blockquote class="quote">
-                                <p>&ldquo;I can live alone, if self-respect, and circumstances require me so to do. I
-                                    need not sell my soul to buy bliss. I have an inward treasure born with me, which
-                                    can keep me alive if all extraneous delights should be withheld, or offered only at
-                                    a price I cannot afford to give.&rdquo; <cite>&mdash; Charlotte Brontë
-                                    </cite></p>
-                            </blockquote>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </div> <!--main section ending-->
+                </div>
+            </div> <!--main section ending-->
 
 
 
-    <script>
-        function updateActiveSection() {
-            // Get the current scroll position
-            var scrollPosition = window.scrollY;
+            <script>
+                function updateActiveSection() {
+                    // Get the current scroll position
+                    var scrollPosition = window.scrollY;
 
-            // Get all the sections in the side navigation
-            var sections = document.querySelectorAll(".sidenav a");
+                    // Get all the sections in the side navigation
+                    var sections = document.querySelectorAll(".sidenav a");
 
-            // Loop through each section
-            sections.forEach(function (section) {
-                var targetId = section.getAttribute("href").substring(1);
-                var targetElement = document.getElementById(targetId);
+                    // Loop through each section
+                    sections.forEach(function(section) {
+                        var targetId = section.getAttribute("href").substring(1);
+                        var targetElement = document.getElementById(targetId);
 
-                // Check if the target element exists and if it is in view
-                if ((scrollPosition === 0 && targetId === "top") || (targetElement && targetElement.offsetTop <= scrollPosition && (targetElement.offsetTop + targetElement.offsetHeight) > scrollPosition)) {
-                    // Remove the active class from all sections
-                    sections.forEach(function (section) {
-                        section.classList.remove("active");
+                        // Check if the target element exists and if it is in view
+                        if ((scrollPosition === 0 && targetId === "top") || (targetElement && targetElement.offsetTop <= scrollPosition && (targetElement.offsetTop + targetElement.offsetHeight) > scrollPosition)) {
+                            // Remove the active class from all sections
+                            sections.forEach(function(section) {
+                                section.classList.remove("active");
+                            });
+
+                            // Add the active class to the current section
+                            section.classList.add("active");
+                        }
                     });
-
-                    // Add the active class to the current section
-                    section.classList.add("active");
                 }
-            });
-        }
 
-        // Add scroll event listener to the window
-        window.addEventListener("scroll", updateActiveSection);
-
-
-    </script>
+                // Add scroll event listener to the window
+                window.addEventListener("scroll", updateActiveSection);
+            </script>
 
 </body>
 

@@ -115,6 +115,11 @@ body {
 
 /*menu button*/
 
+a, a:visited, a:focus {
+    text-decoration: none;
+    color: white;
+}
+
 #menu {
     font-size: 30px;
     padding: 0px 10px;
@@ -200,17 +205,6 @@ body {
     object-fit: cover;
 }
 
-
-.discount-tag {
-    position: absolute;
-    background: #fff;
-    padding: 5px;
-    border-radius: 5px;
-    color: #ff7d7d;
-    right: 10px;
-    top: 10px;
-    text-transform: capitalize;
-}
 
 .card-btn {
     position: absolute;
@@ -338,6 +332,9 @@ cite {
     line-height: 1.5;
     color: rgb(235, 172, 78);
     margin: 30px;
+    /* padding: 30px; */
+    /* position: fixed; */
+    bottom: 0;
 }
 
 h4 {
