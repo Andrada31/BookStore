@@ -61,11 +61,6 @@ th {
 }
 
 .table td {
-    height: 300px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    max-width: 500px;
-    overflow: hidden;
-    color: white !important;
-    padding: 1%;
+    color: rgb(153, 153, 153) !important;
+    padding-bottom: 20px;
 }

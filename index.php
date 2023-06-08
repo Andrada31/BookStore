@@ -106,6 +106,9 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="login.php" role="button">Login</a>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="admin.php" role="button">Admin</a>
+                        </li>
                     </ul>
                     <a class="navbar-brand" href="index.php">
                         BookStore

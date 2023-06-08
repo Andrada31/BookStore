@@ -87,6 +87,9 @@ if (isset($_GET['bookId'])) {
                         <li class="nav-item">
                             <a class="nav-link" href="login.php" role="button">Login</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="admin.php" role="button">Admin</a>
+                        </li>
                     </ul>
                     <a class="navbar-brand" href="index.php">
                         BookStore
@@ -167,7 +170,7 @@ if (isset($_GET['bookId'])) {
                             on the way. When she reached the first hills of the Italic Mountains, she had a last
                             view back on the skyline of her hometown Bookmarksgrove";
                                     else echo $row["quote"] ?> &rdquo; <cite>&mdash; <?php if (!isset($row)) echo "author";
-                                                                                                                                                else echo $row["author"] ?></cite></p>
+                                                                                        else echo $row["author"] ?></cite></p>
                     </blockquote>
                 </div>
             </div>

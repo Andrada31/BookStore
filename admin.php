@@ -118,7 +118,7 @@ $result = $conn->query($sql);
                     </form>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">My Books</a>
+                            <a class="nav-link" href="#">My Books</a>
                         </li>
                         </li>
                         <li class="nav-item">
@@ -126,6 +126,9 @@ $result = $conn->query($sql);
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="login.php" role="button">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="admin.php" role="button">Admin</a>
                         </li>
                     </ul>
                     <a class="navbar-brand" href="index.php">

@@ -106,6 +106,9 @@ if (isset($_POST["signup"])) {
             <li class="nav-item dropdown">
               <a class="nav-link" href="login.php">Login</a>
             </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="admin.php">Admin</a>
+            </li>
           </ul>
           <a class="navbar-brand" href="index.php">
             BookStore
